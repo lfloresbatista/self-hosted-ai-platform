@@ -60,11 +60,9 @@ Agent ──(skill/tool)──► RAG (Chroma) ◄── Ollama embeddings
 ```
 .
 ├── docs/
-│   └── local-rag-credential-mapper.md   # RAG + mapper lab (sanitized)
+│   └── local-rag-credential-mapper.md
 ├── examples/
-│   └── local-rag-lab/                   # Reference Python modules (no secrets)
-├── security/                            # Hardening guides (when published)  # keep
-├── security/                            # Hardening guides (when published)
+│   └── local-rag-lab/          # Reference Python (mapper, vector store, agent)
 └── README.md
 ```
 
