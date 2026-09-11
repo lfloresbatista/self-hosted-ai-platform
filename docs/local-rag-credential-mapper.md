@@ -81,3 +81,7 @@ Reproducible script categories:
 ---
 
 *Sanitized lab notes — suitable for public portfolio. Private ops may use internal codenames; they are intentionally omitted here.*
+
+## Reference code
+
+See [`examples/local-rag-lab/`](../examples/local-rag-lab/).
