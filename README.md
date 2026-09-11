@@ -7,7 +7,7 @@ This repository documents a real-world implementation of a complete self-hosted 
 - Privacy and data sovereignty
 - Security by design (no public ports, Cloudflare Tunnel)
 - Multi-model routing (local + remote providers)
-- **Local RAG / embeddings lab (Valkiria pattern)**
+- **Local RAG / embeddings lab** (vector DB + credential mapper)
 - Platform Engineering practices
 - Observability and operational readiness
 
@@ -31,12 +31,12 @@ Internet → Cloudflare Edge + Access → Cloudflare Tunnel → nginx-proxy → 
 | Hermes / Agent runtime | Technical agent with tools + messaging gateway |
 | Arcane / Docker mgr | Advanced Compose + GitOps management |
 | Ollama | **Embeddings** / optional local models |
-| **ChromaDB + Valkiria pattern** | Vector store + credential mapper + on-demand RAG |
+| **ChromaDB + local RAG pattern** | Vector store + credential mapper + on-demand retrieval |
 
 ```
 Agent ──(skill/tool)──► RAG (Chroma) ◄── Ollama embeddings
   │
-  └── Valkiria mapper: env + config + OAuth store → safe credential file
+  └── Credential mapper: env + config + OAuth store → locked-down credential file
 ```
 
 ---
@@ -60,9 +60,9 @@ Agent ──(skill/tool)──► RAG (Chroma) ◄── Ollama embeddings
 ```
 .
 ├── docs/
-│   └── valkiria-rag-lab.md   # RAG + Valkiria reference lab (sanitized)
-├── examples/                 # Clean docker-compose examples (when published)
-├── security/                 # Hardening guides (when published)
+│   └── local-rag-credential-mapper.md   # RAG + mapper lab (sanitized)
+├── examples/                            # Clean docker-compose examples (when published)
+├── security/                            # Hardening guides (when published)
 └── README.md
 ```
 
@@ -72,7 +72,7 @@ Agent ──(skill/tool)──► RAG (Chroma) ◄── Ollama embeddings
 
 | Lab | Doc | Focus |
 |-----|-----|--------|
-| **Valkiria RAG** | [`docs/valkiria-rag-lab.md`](docs/valkiria-rag-lab.md) | Embeddings, Chroma, OAuth/API mapper, security battery, skill-triggered RAG |
+| **Local RAG + credential mapper** | [`docs/local-rag-credential-mapper.md`](docs/local-rag-credential-mapper.md) | Embeddings, Chroma, API key/OAuth mapper, security battery, skill-triggered RAG |
 
 ---
 
@@ -90,7 +90,7 @@ Agent ──(skill/tool)──► RAG (Chroma) ◄── Ollama embeddings
 ## Related Repositories
 
 - [linux-server-hardening](https://github.com/lfloresbatista/linux-server-hardening) — Practical hardening guides
-- Personal tracking / full runbooks: private OStackAI repo (not public)
+- Personal tracking / full runbooks: private ops repo (not public)
 
 ---
 
